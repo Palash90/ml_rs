@@ -1,6 +1,5 @@
 use super::*;
 
-fn add() {
-    let m1 = create();
-    let m2 = create();
+pub fn add(m1: Matrix, m2: Matrix) -> Matrix {
+    create()
 }
