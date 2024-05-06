@@ -1,12 +1,23 @@
 #[derive(Debug, PartialEq)]
 pub struct Matrix {
-    pub data: Vec<i32>,
+    data: Vec<i32>,
 }
 
-fn create() -> Matrix {
-    Matrix { data: vec![1, 2] }
+// Matrix::new(v);
+impl Matrix {
+    pub fn new(d: Vec<i32>) -> Matrix {
+        Matrix { data: d }
+    }
 }
 
 pub mod addition;
 
 mod multiplication;
+
+#[cfg(test)]
+#[test]
+fn test_new() {
+    let t = Matrix::new(vec![5, 10]);
+
+    assert_eq!(t.data, vec![5, 10]);
+}
