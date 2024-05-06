@@ -1,11 +1,13 @@
+use std::ops::Add;
+
 #[derive(Debug, PartialEq)]
-pub struct Matrix {
-    data: Vec<i32>,
+pub struct Matrix<T: Add + Copy> {
+    data: Vec<T>,
 }
 
 // Matrix::new(v);
-impl Matrix {
-    pub fn new(d: Vec<i32>) -> Matrix {
+impl<T: Add + Copy> Matrix<T> {
+    pub fn new(d: Vec<T>) -> Self {
         Matrix { data: d }
     }
 }

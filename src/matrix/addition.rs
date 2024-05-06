@@ -4,7 +4,7 @@ use std::ops::Div;
 use std::ops::Mul;
 use std::ops::Sub;
 
-impl Add for Matrix {
+impl<T: Add<Output = T> + Copy> Add for Matrix<T> {
     type Output = Self;
 
     fn add(self, rhs: Self) -> Self {
