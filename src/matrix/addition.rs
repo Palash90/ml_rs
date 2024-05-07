@@ -1,8 +1,5 @@
 use super::*;
 use std::ops::Add;
-use std::ops::Div;
-use std::ops::Mul;
-use std::ops::Sub;
 
 impl<T: Add<Output = T> + Copy> Add for Matrix<T> {
     type Output = Self;
