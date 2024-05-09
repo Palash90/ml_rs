@@ -1,5 +1,5 @@
 #[allow(dead_code)]
-pub mod matrix;
+pub mod tensor;
 
 #[allow(dead_code)]
 mod driver;

@@ -1,10 +1,10 @@
 use super::*;
 use std::ops::Add;
 
-impl<T: Add<Output = T> + Copy> Add for Matrix<T> {
-    type Output = Result<Matrix<T>, String>;
+impl<T: Add<Output = T> + Copy> Add for Tensor<T> {
+    type Output = Result<Tensor<T>, String>;
 
-    fn add(self, rhs: Self) -> Result<Matrix<T>, String> {
+    fn add(self, rhs: Self) -> Result<Tensor<T>, String> {
         let mut result_vector = Vec::with_capacity(self.data.len());
 
         if self.data.len() != rhs.data.len() {
