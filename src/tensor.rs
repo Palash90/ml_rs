@@ -1,12 +1,12 @@
-use std::ops::Add;
+use crate::numeric::Numeric;
 
 #[derive(Debug, PartialEq)]
-pub struct Tensor<T: Add + Copy> {
+pub struct Tensor<T: Numeric> {
     data: Vec<T>,
 }
 
 // Matrix::new(v);
-impl<T: Add + Copy> Tensor<T> {
+impl<T: Numeric> Tensor<T> {
     pub fn new(d: Vec<T>) -> Self {
         Tensor { data: d }
     }

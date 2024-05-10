@@ -1,7 +1,9 @@
 use super::*;
 use std::ops::Add;
 
-impl<T: Add<Output = T> + Copy> Add for Tensor<T> {
+use crate::numeric::Numeric;
+
+impl<T: Numeric> Add for Tensor<T> {
     type Output = Result<Tensor<T>, String>;
 
     fn add(self, rhs: Self) -> Result<Tensor<T>, String> {

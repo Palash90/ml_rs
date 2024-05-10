@@ -1,3 +1,4 @@
+pub mod numeric;
 #[allow(dead_code)]
 pub mod tensor;
 
