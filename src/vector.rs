@@ -32,11 +32,10 @@ impl<T: Numeric> Add for Vector<T> {
 
 #[cfg(test)]
 #[test]
-#[should_panic(expected= "VectorShapeError")]
+#[should_panic(expected = "VectorShapeError")]
 fn test_new() {
-
-    match  Vector::new(vec![2, 3], vec![5, 10]) {
-        Ok(_) => {},
-        Err(s) => panic!("{}", s)
+    match Vector::new(vec![2, 3], vec![5, 10]) {
+        Ok(_) => {}
+        Err(s) => panic!("{}", s),
     }
 }

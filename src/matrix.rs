@@ -32,11 +32,10 @@ impl<T: Numeric> Add for Matrix<T> {
 
 #[cfg(test)]
 #[test]
-#[should_panic(expected= "MatrixShapeError")]
+#[should_panic(expected = "MatrixShapeError")]
 fn test_new() {
-
-    match  Matrix::new(vec![2], vec![5, 10]) {
-        Ok(_) => {},
-        Err(s) => panic!("{}", s)
+    match Matrix::new(vec![2], vec![5, 10]) {
+        Ok(_) => {}
+        Err(s) => panic!("{}", s),
     }
 }
