@@ -18,6 +18,7 @@ impl<T: Numeric> Add for Tensor<T> {
         }
 
         Ok(Self {
+            shape: self.shape,
             data: result_vector,
         })
     }
