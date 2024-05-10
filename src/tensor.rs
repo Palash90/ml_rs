@@ -6,7 +6,6 @@ pub struct Tensor<T: Numeric> {
     data: Vec<T>,
 }
 
-// Matrix::new(v);
 impl<T: Numeric> Tensor<T> {
     pub fn new(shape: Vec<u32>, data: Vec<T>) -> Self {
         Tensor { shape, data }
