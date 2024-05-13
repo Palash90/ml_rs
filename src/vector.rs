@@ -1,3 +1,5 @@
+//! This is the vector module, a thin wrapper over Tensor.
+
 use crate::numeric::Numeric;
 use crate::tensor::Tensor;
 use std::ops::Add;

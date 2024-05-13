@@ -1,5 +1,8 @@
+//! This is the main tensor module in which we have all the actual implementations done.
+
 use crate::numeric::Numeric;
 
+/// The base structure to hold the tensor elements.
 #[derive(Debug, PartialEq)]
 pub struct Tensor<T: Numeric> {
     shape: Vec<u32>,

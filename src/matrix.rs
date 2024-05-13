@@ -1,3 +1,5 @@
+//! This is the matrix module, a thin wrapper over Tensor.
+
 use crate::numeric::Numeric;
 use crate::tensor::Tensor;
 use std::ops::Add;
@@ -8,9 +10,22 @@ pub struct Matrix<T: Numeric> {
 }
 
 impl<T: Numeric> Matrix<T> {
+    /// It creates a new Matrix object
+    /// 
+    /// # Example
+    /// ```rust
+    /// use ml::matrix::Matrix;
+    /// 
+    /// let m = Matrix::new(vec![1,1], vec![4]).unwrap();
+    /// ```
+    /// 
+    /// 
+    /// # Panic
+    /// The user can expect some panic!
+    /// 
     pub fn new(shape: Vec<u32>, data: Vec<T>) -> Result<Self, String> {
         if shape.len() != 2 {
-            return Err(format!(
+            panic!("{}", format!(
                 "MatrixShapeError:Matrix must have two dimensions. Provided {}",
                 shape.len()
             ));

@@ -1,3 +1,5 @@
+//! This is a set of types that goes hand in hand with tensor module.
+
 pub trait Numeric:
     Copy
     + std::ops::Add<Output = Self>
