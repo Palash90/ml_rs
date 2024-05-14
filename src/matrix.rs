@@ -11,24 +11,27 @@ pub struct Matrix<T: Numeric> {
 
 impl<T: Numeric> Matrix<T> {
     /// It creates a new Matrix object
-    /// 
+    ///
     /// # Example
     /// ```rust
     /// use ml::matrix::Matrix;
-    /// 
+    ///
     /// let m = Matrix::new(vec![1,1], vec![4]).unwrap();
     /// ```
-    /// 
-    /// 
+    ///
+    ///
     /// # Panic
     /// The user can expect some panic!
-    /// 
+    ///
     pub fn new(shape: Vec<u32>, data: Vec<T>) -> Result<Self, String> {
         if shape.len() != 2 {
-            panic!("{}", format!(
-                "MatrixShapeError:Matrix must have two dimensions. Provided {}",
-                shape.len()
-            ));
+            panic!(
+                "{}",
+                format!(
+                    "MatrixShapeError:Matrix must have two dimensions. Provided {}",
+                    shape.len()
+                )
+            );
         }
 
         Ok(Self {

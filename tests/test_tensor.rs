@@ -36,3 +36,45 @@ fn test_add_panics() {
 
     assert_eq!(Tensor::new(vec![2], vec!(4, 6)), m3);
 }
+
+#[test]
+fn test_sub() {
+    let m1 = Tensor::new(vec![2], vec![1, 2]);
+    let m2 = Tensor::new(vec![2], vec![3, 4]);
+
+    let m3 = m1 - m2;
+
+    let m3 = m3.unwrap();
+
+    assert_eq!(Tensor::new(vec![2], vec!(-2, -2)), m3);
+}
+
+#[test]
+fn test_scale() {
+    let m1 = Tensor::new(vec![2], vec![1, 2]);
+
+    let m3 = m1.scale(5);
+
+    assert_eq!(Tensor::new(vec![2], vec!(5, 10)), m3);
+}
+
+#[test]
+fn test_mul() {
+    let m1 = Tensor::new(vec![1, 2], vec![1, 2]);
+    let m2 = Tensor::new(vec![2, 1], vec![3, 4]);
+
+    let m3 = m1 * m2;
+
+    let m3 = m3.unwrap();
+
+    assert_eq!(Tensor::new(vec![1, 1], vec!(11)), m3);
+}
+
+#[test]
+fn test_transpose() {
+    let m1 = Tensor::new(vec![1, 2], vec![1, 2]);
+
+    let m3 = m1.t();
+
+    assert_eq!(Tensor::new(vec![2, 1], vec!(1, 2)), m3);
+}

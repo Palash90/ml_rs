@@ -1,6 +1,5 @@
 //! This is a sample project to implement Machine Learning while touching almost 70% of the Rust book contents.
-//! 
-
+//!
 
 pub mod matrix;
 pub mod numeric;
