@@ -27,7 +27,7 @@ impl<T: Numeric> Vector<T> {
 impl<T: Numeric> Add for Vector<T> {
     type Output = Result<Vector<T>, String>;
     fn add(self, rhs: Self) -> Result<Vector<T>, String> {
-        let tensor = self.tensor + rhs.tensor;
+        let tensor = self.tensor.add(&rhs.tensor);
         Ok(Self { tensor: tensor? })
     }
 }

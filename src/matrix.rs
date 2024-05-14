@@ -43,7 +43,7 @@ impl<T: Numeric> Matrix<T> {
 impl<T: Numeric> Add for Matrix<T> {
     type Output = Result<Matrix<T>, String>;
     fn add(self, rhs: Self) -> Result<Matrix<T>, String> {
-        let tensor = self.tensor + rhs.tensor;
+        let tensor = self.tensor.add(&rhs.tensor);
         Ok(Self { tensor: tensor? })
     }
 }
